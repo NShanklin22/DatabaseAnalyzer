@@ -4,9 +4,9 @@ import csv
 import requests
 import xml.etree.ElementTree as ET
 
-def loadDatabaseNames():
+def loadDatabaseNames(DatabaseFile):
     # Get the root of the xml document
-    mytree = ET.parse('ASP.xml')
+    mytree = ET.parse(DatabaseFile)
     myroot = mytree.getroot()
 
     # Define a list of names and the total for tracking

@@ -1,37 +1,32 @@
-from loadDatabaseNames import *
-from loadApprovedNames import *
+def analyzeDatabase(databaseNames, approvedNames):
+    # Define list to store correct and incorrect names
+    correctNames = []
+    incorrectNames = []
 
-databaseNames = loadDatabaseNames()
-approvedNames = loadApprovedNames()
+    # Grade to track % names approved
+    Grade = 0
 
-# Define list to store correct and incorrect names
-correctNames = []
-incorrectNames = []
+    for i in range(len(databaseNames)):
+        name = databaseNames[i]
+        if name[0] == "x":
+            name = name[1:]
 
-# Grade to track % names approved
-Grade = 0
+        if(name in approvedNames.values):
+            correctNames.append(name)
+        else:
+            incorrectNames.append(name)
 
-for i in range(len(databaseNames)):
-    name = databaseNames[i]
-    if name[0] == "x":
-        name = name[1:]
+    #Write the filtered names to a csv file
+    with open('correctNames.csv', 'w') as f:
+        for i in range(len(correctNames)):
+            f.write(f"{correctNames[i]}\n")
 
-    if(name in approvedNames.values):
-        correctNames.append(name)
-    else:
-        incorrectNames.append(name)
+    #Write the filtered names to a csv file
+    with open('incorrectNames.csv', 'w') as f:
+        for i in range(len(incorrectNames)):
+            f.write(f"{incorrectNames[i]}\n")
 
-#Write the filtered names to a csv file
-with open('correctNames.csv', 'w') as f:
-    for i in range(len(correctNames)):
-        f.write(f"{correctNames[i]}\n")
+    Grade = len(correctNames) / (len(correctNames) + len(incorrectNames)) * 100
+    Grade = round(Grade, 2)
 
-#Write the filtered names to a csv file
-with open('incorrectNames.csv', 'w') as f:
-    for i in range(len(incorrectNames)):
-        f.write(f"{incorrectNames[i]}\n")
-
-Grade = len(correctNames) / (len(correctNames) + len(incorrectNames)) * 100
-Grade = round(Grade, 2)
-
-print("{} %".format(Grade))
+    return Grade
