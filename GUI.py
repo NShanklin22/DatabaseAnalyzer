@@ -55,47 +55,47 @@ class MainWindow(QWidget):
 
         # FontSize stores the default font size for the window
         FontSize = 18
-        LabelSeparation = int(FontSize * 1.5)
+        LabelSeparation = int(FontSize * 2.0)
 
         # Label 01 uses QLabel and applies it to frame 01, the text can then be updated later
         self.Label01 = QLabel("Click Load Database and select an AS-P xml export", my_frame01)
         self.Label01.move(0,0)
-        self.Label01.resize(sizeX,int(FontSize *1.5))
+        self.Label01.resize(sizeX,int(FontSize *2.0))
         self.Label01.setFont(QFont('Helveitca', 18))
         # Label 02
         self.Label02 = QLabel("", my_frame01)
         self.Label02.move(0,LabelSeparation)
         self.Label02.setFont(QFont('Helveitca', 18))
-        self.Label02.resize(sizeX,int(FontSize *1.5))
+        self.Label02.resize(sizeX,int(FontSize *2.0))
         # Label 03
         self.Label03 = QLabel("", my_frame01)
         self.Label03.move(0,LabelSeparation * 2)
-        self.Label03.resize(sizeX, int(FontSize * 1.5))
+        self.Label03.resize(sizeX, int(FontSize * 2.0))
         self.Label03.setFont(QFont('Helveitca', 18))
         # Label 04
         self.Label04 = QLabel("", my_frame01)
         self.Label04.move(0,LabelSeparation * 3)
-        self.Label04.resize(sizeX, int(FontSize * 1.5))
+        self.Label04.resize(sizeX, int(FontSize * 2.0))
         self.Label04.setFont(QFont('Helveitca', 18))
         # Label 05
         self.Label05 = QLabel("", my_frame01)
         self.Label05.move(0,LabelSeparation * 4)
-        self.Label05.resize(sizeX, int(FontSize * 1.5))
+        self.Label05.resize(sizeX, int(FontSize * 2.0))
         self.Label05.setFont(QFont('Helveitca', 18))
         # Label 06
         self.Label06 = QLabel("", my_frame01)
         self.Label06.move(0,LabelSeparation * 5)
-        self.Label06.resize(sizeX, int(FontSize * 1.5))
+        self.Label06.resize(sizeX, int(FontSize * 2.0))
         self.Label06.setFont(QFont('Helveitca', 18))
         # Label 07
         self.Label07 = QLabel("", my_frame01)
         self.Label07.move(0,LabelSeparation * 6)
-        self.Label07.resize(sizeX, int(FontSize * 1.5))
+        self.Label07.resize(sizeX, int(FontSize * 2.0))
         self.Label07.setFont(QFont('Helveitca', 18))
         # Label 08
         self.Label08 = QLabel("", my_frame01)
         self.Label08.move(0,LabelSeparation * 8)
-        self.Label08.resize(sizeX, int(FontSize * 2))
+        self.Label08.resize(sizeX, int(FontSize * 3))
         self.Label08.setFont(QFont('Helveitca', 28))
 
 
@@ -106,11 +106,10 @@ class MainWindow(QWidget):
         # Add the progress bar
         self.progress_bar = QProgressBar(self)
 
-        mainLayout.addWidget(self.progress_bar)
-
-
         # Add the labels to the first layout
         layout01.addWidget(my_frame01)
+        layout01.addWidget(self.progress_bar)
+
 
         # Add the two buttons to the second layout
         my_button01 = QPushButton("Load Database", clicked = self.getfile)
