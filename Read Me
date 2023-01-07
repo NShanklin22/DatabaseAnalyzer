@@ -1,0 +1,11 @@
+My full time job is a programmer for building automation controls, in this field there are many different common variables that are refered to by different names depending on the programmer.
+
+Naturally as you might guess this can get pretty messy with a lot of variation from site to site.
+
+To mitigate this mess my company follows a standard refered to as SEBA+, this is a recent change which means we have a lot of sites that do not have "standard" names.
+
+The difficult thing about converting these sites is know what the most common incorrect names are without going controller by controller (easily more than 50+ controllers to a site with dozens of points each).
+
+The help with this process I developed this software as a tool to allow a tech to load a database export, analyze it, and receive back a csv file with the incorrect names.
+
+There are also a lot more feature that I plan to implement and am working on a running list of features I would like to implement.

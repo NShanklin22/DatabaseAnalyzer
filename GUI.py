@@ -129,8 +129,11 @@ class MainWindow(QWidget):
 
     # Function to open file dialog so user can select a file
     def getfile(self):
+        self.clearStatusText()
         fname,type = QFileDialog.getOpenFileName(self, 'Open file',
                                             'c:\\', "xml files (*.xml)")
+        if(fname == ""):
+            return
         self.Label02.setText("File {} selected".format(fname))
         self.Label03.setText("")
         self.fname = fname
@@ -169,6 +172,7 @@ class MainWindow(QWidget):
         self.Label07.setText("Analysis Complete")
         QtTest.QTest.qWait(500)
         self.Label08.setText("Total SEBA+ Name Score: {}%".format(self.Grade))
+        self.fname = ""
 
     # Function to display the progress animation once the database has been analyzed
     def progressAnimation(self):
@@ -179,6 +183,14 @@ class MainWindow(QWidget):
             time.sleep(0.10)
             # setting value to progress bar
             self.progress_bar.setValue(i + 76)
+
+    def clearStatusText(self):
+        self.Label02.setText("")
+        self.Label03.setText("")
+        self.Label04.setText("")
+        self.Label05.setText("")
+        self.Label06.setText("")
+        self.Label07.setText("")
 
 app = QApplication([])
 mw = MainWindow()
