@@ -17,12 +17,12 @@ def analyzeDatabase(databaseNames, approvedNames):
             incorrectNames.append(name)
 
     #Write the filtered names to a csv file
-    with open('correctNames.csv', 'w') as f:
+    with open('data/correctNames.csv', 'w') as f:
         for i in range(len(correctNames)):
             f.write(f"{correctNames[i]}\n")
 
     #Write the filtered names to a csv file
-    with open('incorrectNames.csv', 'w') as f:
+    with open('data/incorrectNames.csv', 'w') as f:
         for i in range(len(incorrectNames)):
             f.write(f"{incorrectNames[i]}\n")
 

@@ -34,7 +34,7 @@ def loadDatabaseNames(DatabaseFile):
             applicationNames.append(name)
 
     #Write the filtered names to a csv file
-    with open('applicationNames.csv', 'w') as f:
+    with open('data/applicationNames.csv', 'w') as f:
         for i in range(len(applicationNames)):
             f.write(f"{applicationNames[i]}\n")
 
