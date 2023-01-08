@@ -169,7 +169,7 @@ class MainWindow(QWidget):
         QtTest.QTest.qWait(random.randint(5, 15) * 100)
         self.Grade = analyzeDatabase(databaseNames, approvedNames)
         self.progressAnimation()
-        self.Label07.setText("Analysis Complete")
+        self.Label07.setText("Analysis Complete - Sending data to database")
         QtTest.QTest.qWait(500)
         self.Label08.setText("Total SEBA+ Name Score: {}%".format(self.Grade))
         self.fname = ""
