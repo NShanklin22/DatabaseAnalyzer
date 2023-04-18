@@ -1,3 +1,4 @@
+import re
 def analyzeDatabase(databaseNames, approvedNames):
     # Define list to store correct and incorrect names
     correctNames = []
@@ -10,6 +11,9 @@ def analyzeDatabase(databaseNames, approvedNames):
         name = databaseNames[i]
         if name[0] == "x":
             name = name[1:]
+        if re.search(r'\d', name):
+            non_digit_chars = re.findall(r'\D', name)
+            name = "".join(non_digit_chars)
 
         if(name in approvedNames.values):
             correctNames.append(name)

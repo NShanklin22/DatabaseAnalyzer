@@ -19,7 +19,9 @@ def loadDatabaseNames(DatabaseFile):
                    'bacnet.mpx.point.VoltageOutput',
                    'bacnet.mpx.point.DigitalOutput',
                    'bacnet.mpx.value.AnalogValue',
-                   'bacnet.mpx.value.DigitalValue'
+                   'bacnet.mpx.value.DigitalValue',
+                   'server.point.BV',
+                   "server.point.AV"
                    ]
 
     # Use iter to iterate through all the "OI" Tags
