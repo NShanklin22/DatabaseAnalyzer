@@ -1,0 +1,1283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ObjectSet ExportMode="Special" Note="TypesFirst" SemanticsFilter="Special" Version="4.0.3.176">
+  <MetaInformation>
+    <ExportMode Value="Special"/>
+    <SemanticsFilter Value="None"/>
+    <RuntimeVersion Value="4.0.3.176"/>
+    <SourceVersion Value="4.0.3.176"/>
+    <ServerFullPath Value="/Kitley02"/>
+  </MetaInformation>
+<ExportedObjects>
+  <OI NAME="Values" TYPE="system.base.Folder">
+    <OI NAME="Chiller" TYPE="system.base.Folder">
+      <OI NAME="Alarm" TYPE="system.base.Folder">
+        <OI NAME="Ch1Loc" TYPE="server.point.BV"/>
+        <OI DESCR="Chiller Alarm Delay" NAME="ChAlmDly" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="minutes"/>
+          <PI Name="Value" Unit="0x2E0006" Value="59"/>
+        </OI>
+        <OI DESCR="Chill Water Pump Alarm" NAME="PchwP2AlmRst" TYPE="server.point.BV"/>
+        <OI DESCR="Chilled Water Pump Alarm" NAME="SchwP3AlmRst" TYPE="server.point.BV">
+          <PI Name="Value" Value="0"/>
+        </OI>
+        <OI DESCR="Chilled Water Pump Alarm" NAME="SchwP4AlmRst" TYPE="server.point.BV">
+          <PI Name="Value" Value="0"/>
+        </OI>
+        <OI DESCR="Hot Water Pump Alarm" NAME="ShwP8AlmRst" TYPE="server.point.BV"/>
+        <OI DESCR="Hot Water Pump Alarm" NAME="ShwP9AlmRst" TYPE="server.point.BV"/>
+        <OI DESCR="Hot Water Pump" NAME="ShwP9Alm" TYPE="server.point.BV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Boiler/Alarm/SetHwP9Alm" Property="AlrmSecHWP9" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI DESCR="Hot Water Pump Alarm" NAME="ShwP8Alm" TYPE="server.point.BV"/>
+        <OI DESCR="Chiller 1" NAME="Ch1Alm" TYPE="server.point.BV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Chiller/Alarm/SetChlr1Alm" Property="Chlr1Alm" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI DESCR="Chiller 2" NAME="Ch2Alm" TYPE="server.point.BV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Chiller/Alarm/SetChlr2Alm" Property="Chlr2Alm" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI DESCR="Chilled Water Pump" NAME="SchwP3Alm" TYPE="server.point.BV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Chiller/Alarm/SetSchwP3Alm" Property="SchwP3Alm" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI DESCR="Chilled Water Pump" NAME="SchwP4Alm" TYPE="server.point.BV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Chiller/Alarm/SetSchwP4Alm" Property="SchwP4Alm" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI DESCR="Chiller Alarm Flag" NAME="Ch1AlmRst" TYPE="server.point.BV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Chiller/Alarm/SetChlr1Alm" Property="AlrmChiller1Ack" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI DESCR="Chiller Alarm Flag" NAME="Ch2AlmRst" TYPE="server.point.BV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Chiller/Alarm/SetChlr2Alm" Property="AlrmChiller2Ack" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI DESCR="Chill Water Pump Alarm" NAME="PchwP1Alm" TYPE="server.point.BV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Chiller/Alarm/SetPchwP1Alm" Property="PchwP1Alm" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI DESCR="Chill Water Pump" NAME="PchwP2Alm" TYPE="server.point.BV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Chiller/Alarm/SetPchwP2Alm" Property="PchwP2Alm" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="PchwSTmpAlm" TYPE="server.point.BV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Chiller/Alarm/SetPchwRTmpAlm" Property="AlrmPriCWS" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI DESCR="Chill Water Pump Alarm" NAME="PchwP1AlmRst" TYPE="server.point.BV"/>
+        <OI DESCR="Chilled Water Supply Temperature Alarm" NAME="ChwSTmpAlm" TYPE="server.point.BV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Chiller/Alarm/SetPchwRTmpAlm" Property="ChwSTmpAlm" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="SchwSTmpAlm" TYPE="server.point.BV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Chiller/Alarm/SetSchwSTmpAlm" Property="SchwSTmpAlm" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+      </OI>
+      <OI NAME="ChillerControl" TYPE="system.base.Folder">
+        <OI DESCR="Number of Chiller Stages needed" NAME="ChStgReq" TYPE="server.point.AV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Chiller/ChillerControl/SetChStgReq" Property="ChStgReq" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="Ch2Loc" TYPE="server.point.BV">
+          <PI Name="Value" Value="1"/>
+        </OI>
+        <OI NAME="ChFzMd" TYPE="server.point.BV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Chiller/SystemEnable/SetChFzMd" Property="ChFzMd" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI DESCR="Lag Chiller" NAME="ChLag" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="blrnumber"/>
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Chiller/ChillerControl/SetChLd" Property="ChLag" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI DESCR="Lead Chiller" NAME="ChLd" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="chlrnumber"/>
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Chiller/ChillerControl/SetChLd" Property="ChLd" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI DESCR="Chilled Water Supply DP Setpoint" NAME="ChwDifPrSpt" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="psi"/>
+          <PI Name="Value" Unit="0x230003" Value="20"/>
+        </OI>
+        <OI DESCR="Chiller Enable Flag" NAME="ChEna" TYPE="server.point.BV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Chiller/SystemEnable/SetChwSysAvl" Property="ChillerEnable" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="ChwRTmpSpt" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="degf"/>
+          <PI Name="Value" Unit="0x280003" Value="110"/>
+        </OI>
+        <OI NAME="ChwRTmpSptDb" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="degf"/>
+          <PI Name="Value" Unit="0x280003" Value="10"/>
+        </OI>
+        <OI DESCR="Secondary CWS Alarm Setpoint" NAME="ChwSTmpSpt" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="degf"/>
+          <PI Name="Value" Unit="0x280003" Value="48"/>
+        </OI>
+        <OI NAME="ChwSTmpSptDb" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="degf"/>
+          <PI Name="Value" Unit="0x280003" Value="10"/>
+        </OI>
+        <OI DESCR="Chill Water Lockout Temp" NAME="ChwSysLocSpt" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="degf"/>
+          <PI Name="Value" Unit="0x280003" Value="55"/>
+        </OI>
+        <OI DESCR="Chiller Enable Setpoint" NAME="ChEnaSpt" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="degf"/>
+          <PI Name="Value" Unit="0x280003" Value="55"/>
+        </OI>
+        <OI DESCR="Average Sec. Chwater Supply Temp" NAME="NotUsed" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="degf"/>
+          <PI Name="Value" Unit="0x280003">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Other/Variables" Property="ASCHWST" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="ChCall" TYPE="server.point.AV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Chiller/SystemEnable/SetChCall" Property="ChCall" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI DESCR="Secondary CHWS High Temp" NAME="SchwSTmpHi" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="degf"/>
+          <PI Name="Value" Unit="0x280003"/>
+        </OI>
+        <OI DESCR="Secondary CWS Low Temp" NAME="SchwSTmpLo" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="degf"/>
+          <PI Name="Value" Unit="0x280003"/>
+        </OI>
+        <OI DESCR="Chiller Delay Off Time Stage 1" NAME="ChStg1Dof" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="minutes"/>
+          <PI Name="Value" Value="59"/>
+        </OI>
+        <OI DESCR="Chiller Delay Off Time Stage 1" NAME="ChStg2Dof" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="minutes"/>
+          <PI Name="Value" Value="59"/>
+        </OI>
+        <OI DESCR="Stage 1 Chiller Delay" NAME="ChStg1Don" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="minutes"/>
+          <PI Name="Value" Unit="0x2E0006" Value="2"/>
+        </OI>
+        <OI DESCR="Stage 2 Chiller Delay" NAME="ChStg2Don" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="minutes"/>
+          <PI Name="Value" Unit="0x2E0006" Value="30"/>
+        </OI>
+        <OI DESCR="Day of Lead Switch Over" NAME="LdSwDay" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="weekday"/>
+        </OI>
+        <OI DESCR="Lead Switch Time of Day" NAME="LdSwTm" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="military"/>
+        </OI>
+        <OI DESCR="Reset For Chiller Failure" NAME="ChRst" TYPE="server.point.BV"/>
+        <OI DESCR="Kitley CW Supply Temp Alarm" NAME="SchwSTmp" TYPE="server.point.AV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Chiller/Alarm/SetSchwSTmpAlm" Property="AlrmSecCWS" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="Ch1Rt" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="hrs"/>
+          <PI Name="Value" Unit="0x2E0005">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Boiler/PumpControl/CalcRuntimes" Property="Chiller1Runtime" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="Ch2Rt" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="hrs"/>
+          <PI Name="Value" Unit="0x2E0005">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Boiler/PumpControl/CalcRuntimes" Property="Chiller2Runtime" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI DESCR="Chiller Delay Off Time Stage 1" NAME="ChStg3Dof" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="minutes"/>
+          <PI Name="Value" Value="59"/>
+        </OI>
+        <OI DESCR="Stage 3 Chiller Delay" NAME="ChStg3Don" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="minutes"/>
+          <PI Name="Value" Unit="0x2E0006" Value="30"/>
+        </OI>
+        <OI DESCR="Minimum Off Time for Chiller" NAME="ChDon" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="minutes"/>
+          <PI Name="Value" Unit="0x2E0006" Value="10"/>
+        </OI>
+        <OI DESCR="Minimum On Time for Chiller" NAME="ChDof" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="minutes"/>
+          <PI Name="Value" Unit="0x2E0006"/>
+        </OI>
+        <OI DESCR="On Delay Time for Chiller" NAME="NotUsed2" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="minutes"/>
+          <PI Name="Value" Unit="0x2E0006"/>
+        </OI>
+        <OI NAME="ChFzMdSpt" TYPE="server.point.AV">
+          <PI Name="Value" Unit="0x280003" Value="18"/>
+        </OI>
+        <OI NAME="Ch1Loc" TYPE="server.point.BV"/>
+        <OI NAME="SchwSTmpSptHi" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="degf"/>
+          <PI Name="Value" Unit="0x280003" Value="10"/>
+        </OI>
+        <OI NAME="SchwSTmpSptLo" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="degf"/>
+          <PI Name="Value" Unit="0x280003" Value="10"/>
+        </OI>
+      </OI>
+      <OI NAME="PumpControl" TYPE="system.base.Folder">
+        <OI DESCR="Pump Delay Off" NAME="ChwPDof" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="minutes"/>
+          <PI Name="Value" Unit="0x2E0006"/>
+        </OI>
+        <OI DESCR="Chill Water Pump Alarm" NAME="PchwP1Rst" TYPE="server.point.BV"/>
+        <OI DESCR="Lead Chilled Water Pump" NAME="SchwPLd" TYPE="server.point.AV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Chiller/PumpControl/SetSchwPLd" Property="SchwPLd" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="PchwP1Rt" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="hrs"/>
+          <PI Name="Value" Unit="0x2E0005">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Boiler/PumpControl/CalcRuntimes" Property="PchwP1Rt" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="PchwP2Rt" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="hrs"/>
+          <PI Name="Value" Unit="0x2E0005">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Boiler/PumpControl/CalcRuntimes" Property="PchwP2Rt" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="SchwP3Rt" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="hrs"/>
+          <PI Name="Value" Unit="0x2E0005">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Boiler/PumpControl/CalcRuntimes" Property="SchwP3Rt" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="SchwP4Rt" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="hrs"/>
+          <PI Name="Value" Unit="0x2E0005">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Boiler/PumpControl/CalcRuntimes" Property="SchwP4Rt" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="SchwP3SpdMax" TYPE="server.point.AV">
+          <PI Name="Value" Value="100"/>
+        </OI>
+        <OI NAME="SchwP3SpdMin" TYPE="server.point.AV">
+          <PI Name="Value" Value="20"/>
+        </OI>
+        <OI NAME="SchwP4SpdMin" TYPE="server.point.AV">
+          <PI Name="Value" Value="20"/>
+        </OI>
+        <OI NAME="SchwP4SpdMax" TYPE="server.point.AV">
+          <PI Name="Value" Value="100"/>
+        </OI>
+        <OI NAME="SchwFlPct" TYPE="server.point.AV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Chiller/PumpControl/CalcChwFl" Property="SchwFlPct" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+      </OI>
+      <OI NAME="SystemEnable" TYPE="system.base.Folder">
+        <OI DESCR="Chilled Water System Enable" NAME="ChwSysEna" TYPE="server.point.BV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Chiller/SystemEnable/SetChCall" Property="ChCall" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="ChwLocSpt" TYPE="server.point.AV">
+          <PI Name="Value" Value="55"/>
+        </OI>
+        <OI DESCR="Chilled Water System Enable" NAME="ChwSysAvl" TYPE="server.point.BV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Chiller/SystemEnable/SetChwSysAvl" Property="ChwSysAvl" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="ChwSysEnaSpt" TYPE="server.point.AV">
+          <PI Name="Value" Value="55"/>
+        </OI>
+      </OI>
+    </OI>
+    <OI NAME="Boiler" TYPE="system.base.Folder">
+      <OI NAME="Alarm" TYPE="system.base.Folder">
+        <OI NAME="Parameters" TYPE="system.base.Folder">
+          <OI DESCR="Hot Water Pump Alarm" NAME="PhwP5AlmRst" TYPE="server.point.BV">
+            <PI Name="Value" Value="0"/>
+          </OI>
+          <OI DESCR="Hot Water Pump Alarm" NAME="PhwP6AlmRst" TYPE="server.point.BV">
+            <PI Name="Value" Value="0"/>
+          </OI>
+          <OI DESCR="Hot Water Pump Alarm" NAME="PhwP7AlmRst" TYPE="server.point.BV">
+            <PI Name="Value" Value="0"/>
+          </OI>
+          <OI DESCR="Hot Water Pump Alarm" NAME="ShwP9AlmRst" TYPE="server.point.BV"/>
+          <OI DESCR="Hot Water Pump Alarm" NAME="ShwP8AlmRst" TYPE="server.point.BV"/>
+          <OI NAME="HwDifPrAlmDly" TYPE="server.point.AV">
+            <PI Name="Value" Value="900"/>
+          </OI>
+        </OI>
+        <OI NAME="Values" TYPE="system.base.Folder">
+          <OI DESCR="Combustion Air Unit Fail Flag" NAME="CbaFan1Alm" TYPE="server.point.BV">
+            <PI Name="Value">
+              <Reference DeltaFilter="0" Object="../../../../../Programs/Boiler/Alarm/SetCba1Alm" Property="AlrmCAU1" Retransmit="0" TransferRate="10"/>
+            </PI>
+          </OI>
+          <OI DESCR="Combustion Air Unit Fail Flag" NAME="CbaFan2Alm" TYPE="server.point.BV">
+            <PI Name="Value">
+              <Reference DeltaFilter="0" Object="../../../../../Programs/Boiler/Alarm/SetCba2Alm" Property="AlrmCAU2" Retransmit="0" TransferRate="10"/>
+            </PI>
+          </OI>
+          <OI DESCR="Hot Water Pump" NAME="PhwP5Alm" TYPE="server.point.BV">
+            <PI Name="Value">
+              <Reference DeltaFilter="0" Object="../../../../../Programs/Boiler/Alarm/SetHwP5Alm" Property="PhwP5Alm" Retransmit="0" TransferRate="10"/>
+            </PI>
+          </OI>
+          <OI DESCR="Hot Water Pump" NAME="PhwP6Alm" TYPE="server.point.BV">
+            <PI Name="Value">
+              <Reference DeltaFilter="0" Object="../../../../../Programs/Boiler/Alarm/SetHwP6Alm" Property="PhwP6Alm" Retransmit="0" TransferRate="10"/>
+            </PI>
+          </OI>
+          <OI DESCR="Hot Water Pump" NAME="PhwP7Alm" TYPE="server.point.BV">
+            <PI Name="Value">
+              <Reference DeltaFilter="0" Object="../../../../../Programs/Boiler/Alarm/SetHwP7Alm" Property="PhwP7Alm" Retransmit="0" TransferRate="10"/>
+            </PI>
+          </OI>
+          <OI DESCR="Hot Water Pump" NAME="ShwP8Alm" TYPE="server.point.BV">
+            <PI Name="Value">
+              <Reference DeltaFilter="0" Object="../../../../../Programs/Boiler/Alarm/SetHwP8Alm" Property="ShwP8Alm" Retransmit="0" TransferRate="10"/>
+            </PI>
+          </OI>
+          <OI DESCR="Hot Water Pump" NAME="ShwP9Alm" TYPE="server.point.BV">
+            <PI Name="Value">
+              <Reference DeltaFilter="0" Object="../../../../../Programs/Boiler/Alarm/SetHwP9Alm" Property="ShwP9Alm" Retransmit="0" TransferRate="10"/>
+            </PI>
+          </OI>
+          <OI NAME="HwSTmpSptAlm" TYPE="server.point.BV">
+            <PI Name="Value">
+              <Reference DeltaFilter="0" Object="../../../../../Programs/Boiler/Alarm/SetBlrSTmpAlm" Property="HwSTmpAlm" Retransmit="0" TransferRate="10"/>
+            </PI>
+          </OI>
+          <OI DESCR="Hot Water Pump" NAME="HwBothPAlm" TYPE="server.point.BV">
+            <PI Name="Value">
+              <Reference DeltaFilter="0" Object="../../../../../Programs/Boiler/Alarm/SetBothPmpAlm" Property="HwBothPmpAlm" Retransmit="0" TransferRate="10"/>
+            </PI>
+          </OI>
+          <OI NAME="HwDifPrAlm" TYPE="server.point.BV">
+            <PI Name="Value">
+              <Reference DeltaFilter="0" Object="../../../../../Programs/Boiler/Alarm/SetHwDpAlm" Property="HwDifPrAlm" Retransmit="0" TransferRate="10"/>
+            </PI>
+          </OI>
+        </OI>
+      </OI>
+      <OI NAME="BoilerControl" TYPE="system.base.Folder">
+        <OI DESCR="Boiler Hot Water Supply Setpoint" NAME="PhwSTmpSpt" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="degf"/>
+          <PI Name="Value" Unit="0x280003" Value="0">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Boiler/BoilerControl/SetHwSTmpSpt" Property="PhwSTmpSpt" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="BlrCall" TYPE="server.point.BV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Boiler/SystemEnable/SetBlrCall" Property="BlrCall" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="BlrFzMd" TYPE="server.point.BV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Boiler/SystemEnable/SetBlrFzMd" Property="BlrFzMd" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI DESCR="Number of Boilers Needed" NAME="BlrNumReq" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="1,2or3"/>
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Boiler/BoilerControl/SetBlrNumReq" Property="BlrNumReq" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI DESCR="Lag Boiler" NAME="BlrLg" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="blrnumber"/>
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Boiler/BoilerControl/SetBlrLd" Property="BlrLg" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI DESCR="Lead Boiler" NAME="BlrLd" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="blrnumber"/>
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Boiler/BoilerControl/SetBlrLd" Property="BlrLd" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI DESCR="Boiler Alarm Flag" NAME="Blr1STmpAlm" TYPE="server.point.BV">
+          <PI Name="NOTE2" Value="on=alarm"/>
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Boiler/Alarm/SetBlr1Alm" Property="Blr1STmpAlm" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI DESCR="Boiler Alarm Flag" NAME="Blr2STmpAlm" TYPE="server.point.BV">
+          <PI Name="NOTE2" Value="on=alarm"/>
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Boiler/Alarm/SetBlr2Alm" Property="AlrmBoiler2HWS" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="Blr1Rt" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="hrs"/>
+          <PI Name="Value" Unit="0x2E0005">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Boiler/PumpControl/CalcRuntimes" Property="Blr1Rt" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="Blr2Rt" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="hrs"/>
+          <PI Name="Value" Unit="0x2E0005">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Boiler/PumpControl/CalcRuntimes" Property="Blr2Rt" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI DESCR="Boiler Alarm Flag" NAME="Blr3STmpAlm" TYPE="server.point.BV">
+          <PI Name="NOTE2" Value="on=alarm"/>
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Boiler/Alarm/SetBlr3Alm" Property="AlrmBoiler3HWS" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI DESCR="Low Boiler Room Temp" NAME="BlrRmTmpAlm" TYPE="server.point.BV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Boiler/Alarm/SetMechRmAlm" Property="AlrmBoilerRm" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI DESCR="Back Up Boiler" NAME="BlrBkp" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="blrnumber"/>
+        </OI>
+        <OI NAME="Blr3Rt" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="hrs"/>
+          <PI Name="Value" Unit="0x2E0005">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Boiler/PumpControl/CalcRuntimes" Property="Blr3Rt" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="Parameters" TYPE="system.base.Folder">
+          <OI DESCR="Boiler Minimum On time" NAME="BlrDof" TYPE="server.point.AV">
+            <PI Name="NOTE2" Value="seconds"/>
+            <PI Name="Value" Unit="0x2E0007" Value="120"/>
+          </OI>
+          <OI DESCR="1st Stage OAT Blr setpoint" NAME="BlrStg1OaTmpSpt" TYPE="server.point.AV">
+            <PI Name="NOTE2" Value="degf"/>
+            <PI Name="Value" Unit="0x280003" Value="110"/>
+          </OI>
+          <OI DESCR="Boiler OAT Setpoint for Stage 2" NAME="BlrStg2OaTmpSpt" TYPE="server.point.AV">
+            <PI Name="NOTE2" Value="degf"/>
+            <PI Name="Value" Unit="0x280003" Value="60"/>
+          </OI>
+          <OI DESCR="Boiler OAT Stage 3 Setpoint" NAME="BlrStg3OaTmpSpt" TYPE="server.point.AV">
+            <PI Name="NOTE2" Value="degf"/>
+            <PI Name="Value" Unit="0x280003" Value="38"/>
+          </OI>
+          <OI DESCR="Boiler Stage 1 Delay Time" NAME="BlrStg1Don" TYPE="server.point.AV">
+            <PI Name="NOTE2" Value="minutes"/>
+            <PI Name="Value" Unit="0x2E0006" Value="2"/>
+          </OI>
+          <OI DESCR="Boiler Stage 2 Delay Time" NAME="BlrStg2Don" TYPE="server.point.AV">
+            <PI Name="NOTE2" Value="minutes"/>
+            <PI Name="Value" Unit="0x2E0006" Value="10"/>
+          </OI>
+          <OI DESCR="Boiler Stage 3 Delay Time" NAME="BlrStg3Don" TYPE="server.point.AV">
+            <PI Name="NOTE2" Value="minutes"/>
+            <PI Name="Value" Unit="0x2E0006" Value="30"/>
+          </OI>
+          <OI NAME="BlrDon" TYPE="server.point.AV">
+            <PI Name="NOTE2" Value="minutes"/>
+            <PI Name="Value" Unit="0x2E0006" Value="10"/>
+          </OI>
+          <OI NAME="Blr1STmpSpt" TYPE="server.point.AV">
+            <PI Name="Value">
+              <Reference DeltaFilter="0" Object="../../../../../Programs/Boiler/BoilerControl/SetHwSTmpSpt" Property="Blr1STmpSpt" Retransmit="0" TransferRate="10"/>
+            </PI>
+          </OI>
+          <OI NAME="Blr2STmpSpt" TYPE="server.point.AV">
+            <PI Name="Value">
+              <Reference DeltaFilter="0" Object="../../../../../Programs/Boiler/BoilerControl/SetHwSTmpSpt" Property="Blr2STmpSpt" Retransmit="0" TransferRate="10"/>
+            </PI>
+          </OI>
+          <OI NAME="Blr3STmpSpt" TYPE="server.point.AV">
+            <PI Name="Value">
+              <Reference DeltaFilter="0" Object="../../../../../Programs/Boiler/BoilerControl/SetHwSTmpSpt" Property="Blr3STmpSpt" Retransmit="0" TransferRate="10"/>
+            </PI>
+          </OI>
+          <OI DESCR="Primary HWS Temp DB Stpt" NAME="HwSTmpSptDb" TYPE="server.point.AV">
+            <PI Name="NOTE2" Value="degf"/>
+            <PI Name="Value" Unit="0x280003" Value="15"/>
+          </OI>
+          <OI NAME="Blr1Loc" TYPE="server.point.BV"/>
+          <OI NAME="Blr2Loc" TYPE="server.point.BV"/>
+          <OI NAME="Blr3Loc" TYPE="server.point.BV"/>
+          <OI NAME="BlrPDof" TYPE="server.point.AV">
+            <PI Name="Value" Value="30"/>
+          </OI>
+          <OI DESCR="Boiler Minimum On time" NAME="BlrAcycDly" TYPE="server.point.AV">
+            <PI Name="NOTE2" Value="seconds"/>
+            <PI Name="Value" Unit="0x2E0006" Value="5"/>
+          </OI>
+          <OI NAME="BlrSTmpSptDb" TYPE="server.point.AV">
+            <PI Name="Value">
+              <Reference DeltaFilter="0" Object="../../../../../Programs/Other/Variables" Property="StptHWTemp2" Retransmit="0" TransferRate="10"/>
+            </PI>
+          </OI>
+          <OI NAME="BlrFzMdSpt" TYPE="server.point.AV">
+            <PI Name="Value" Value="35"/>
+          </OI>
+        </OI>
+      </OI>
+      <OI NAME="CombustionAirControl" TYPE="system.base.Folder">
+        <OI DESCR="Lead Combustion AIr Unit" NAME="CbaLd" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="caunumber"/>
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Boiler/CombustionAirControl/SetCbaLd" Property="CbaLd" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+      </OI>
+      <OI NAME="PumpControl" TYPE="system.base.Folder">
+        <OI DESCR="Hot Water Supply DP Setpoint" NAME="HwDifPrSpt" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="psi"/>
+          <PI Name="Value" Unit="0x230003" Value="8"/>
+        </OI>
+        <OI DESCR="Dly before close isolation valve" NAME="PhwPDof" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="minutes"/>
+          <PI Name="Value" Unit="0x2E0006" Value="5"/>
+        </OI>
+        <OI DESCR="Lead Hot Water Pump" NAME="ShwPLd" TYPE="server.point.AV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Boiler/PumpControl/SetShwPLd" Property="LeadHWP" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI DESCR="HWP VFD Speed" NAME="ShwPSpdSpt" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="%"/>
+          <PI Name="Value" Unit="0x200001">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Boiler/PumpControl/SetShwPSpd" Property="ShwPSpdSpt" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="PhwP5Rt" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="hrs"/>
+          <PI Name="Value" Unit="0x2E0005">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Boiler/PumpControl/CalcRuntimes" Property="PhwP5Rt" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="PhwP6Rt" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="hrs"/>
+          <PI Name="Value" Unit="0x2E0005">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Boiler/PumpControl/CalcRuntimes" Property="PhwP6Rt" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="PhwP7Rt" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="hrs"/>
+          <PI Name="Value" Unit="0x2E0005">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Boiler/PumpControl/CalcRuntimes" Property="PhwP7Rt" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="ShwP8Rt" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="hrs"/>
+          <PI Name="Value" Unit="0x2E0005">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Boiler/PumpControl/CalcRuntimes" Property="ShwP8Rt" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="ShwP9Rt" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="hrs"/>
+          <PI Name="Value" Unit="0x2E0005">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Boiler/PumpControl/CalcRuntimes" Property="ShwP9Rt" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="LdSwDay" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="hrs"/>
+          <PI Name="Value" Unit="0x2E0005" Value="1"/>
+        </OI>
+        <OI NAME="LdSwTm" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="hrs"/>
+          <PI Name="Value" Unit="0x2E0005" Value="8"/>
+        </OI>
+        <OI DESCR="HWP VFD Speed" NAME="ShwPLgDisSpd" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="%"/>
+          <PI Name="Value" Unit="0x200001" Value="80"/>
+        </OI>
+        <OI DESCR="HWP VFD Speed" NAME="ShwPLgEnaSpd" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="%"/>
+          <PI Name="Value" Unit="0x200001" Value="100"/>
+        </OI>
+        <OI DESCR="HWP VFD Speed" NAME="ShwPLgDof" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="%"/>
+          <PI Name="Value" Unit="0x200001" Value="300"/>
+        </OI>
+        <OI DESCR="HWP VFD Speed" NAME="ShwPLgDon" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="%"/>
+          <PI Name="Value" Unit="0x200001" Value="300"/>
+        </OI>
+        <OI NAME="HwPSpdMax" TYPE="server.point.AV">
+          <PI Name="Value" Value="100"/>
+        </OI>
+        <OI NAME="HwPSpdMin" TYPE="server.point.AV">
+          <PI Name="Value" Value="30"/>
+        </OI>
+      </OI>
+      <OI NAME="SystemEnable" TYPE="system.base.Folder">
+        <OI DESCR="Boiler Enable Flag" NAME="HwSysAvl" TYPE="server.point.BV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/Boiler/SystemEnable/SetHwSysAvl" Property="HwSysAvl" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI DESCR="Fixed Hot Water Lockout Setpoint" NAME="HwSysLocSpt" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="degf"/>
+          <PI Name="Value" Unit="0x280003" Value="60"/>
+        </OI>
+        <OI DESCR="Hot Water Supply DP Setpoint" NAME="FzMdSpt" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="psi"/>
+          <PI Name="Value" Unit="0x230003" Value="8"/>
+        </OI>
+      </OI>
+    </OI>
+    <OI NAME="Kitchen" TYPE="system.base.Folder">
+      <OI DESCR="Cooler Temperature Alarm Setpoin" NAME="StptCoolerAlm" TYPE="server.point.AV">
+        <PI Name="NOTE2" Value="degrees"/>
+        <PI Name="Value" Value="45"/>
+      </OI>
+      <OI DESCR="Cooler Temp Alarm Deadband" NAME="StptCoolerAlmDB" TYPE="server.point.AV">
+        <PI Name="NOTE2" Value="degf"/>
+        <PI Name="Value" Unit="0x280003" Value="10"/>
+      </OI>
+      <OI DESCR="Cooler Alarm Delay" NAME="ClrTmpAlmDly" TYPE="server.point.AV">
+        <PI Name="NOTE2" Value="seconds"/>
+        <PI Name="Value" Unit="0x2E0007" Value="900"/>
+      </OI>
+      <OI DESCR="Freezer Alarm Temperature Setpoi" NAME="StptFreezerAlm" TYPE="server.point.AV">
+        <PI Name="NOTE2" Value="degf"/>
+        <PI Name="Value" Unit="0x280003" Value="10"/>
+      </OI>
+      <OI DESCR="Freezer Alarm Deadband" NAME="StptFreezerAlmDB" TYPE="server.point.AV">
+        <PI Name="NOTE2" Value="degf"/>
+        <PI Name="Value" Unit="0x280003" Value="5"/>
+      </OI>
+      <OI DESCR="Freezer Temp Alarm Delay" NAME="StptFreezerAlmDl" TYPE="server.point.AV">
+        <PI Name="NOTE2" Value="seconds"/>
+        <PI Name="Value" Unit="0x2E0007" Value="900"/>
+      </OI>
+    </OI>
+    <OI NAME="Transfer" TYPE="system.base.Folder">
+      <OI NAME="xAH01HFanStatus" TYPE="server.point.BV"/>
+      <OI NAME="xAH01CFanStatus" TYPE="server.point.BV"/>
+      <OI NAME="xAH02HFanStatus" TYPE="server.point.BV"/>
+      <OI NAME="xAH02CFanStatus" TYPE="server.point.BV"/>
+      <OI NAME="xAH03HFanStatus" TYPE="server.point.BV"/>
+      <OI NAME="xAH03CFanStatus" TYPE="server.point.BV"/>
+      <OI DESCR="Outside Air Temperature" NAME="xOaTmp" TYPE="server.point.AV">
+        <PI Name="NOTE2" Value="degreesf"/>
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Locked="1" Object="/BunkerHill01/Application/Values/Transfer/xOaTmp" Property="Value" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="xAH04FanStatus" TYPE="server.point.BV"/>
+      <OI NAME="xAH04HeatCall" TYPE="server.point.BV"/>
+      <OI NAME="xAH04CoolCall" TYPE="server.point.BV"/>
+      <OI NAME="xAH05FanStatus" TYPE="server.point.BV"/>
+      <OI NAME="xAH05HeatCall" TYPE="server.point.BV"/>
+      <OI NAME="xAH05CoolCall" TYPE="server.point.BV"/>
+      <OI NAME="xAH06FanStatus" TYPE="server.point.BV"/>
+      <OI NAME="xAH06HeatCall" TYPE="server.point.BV"/>
+      <OI NAME="xAH06CoolCall" TYPE="server.point.BV"/>
+      <OI NAME="xAH02Ductsp" TYPE="server.point.AV"/>
+      <OI NAME="xAH02HighStatic" TYPE="server.point.AV"/>
+      <OI NAME="xAH02VFD" TYPE="server.point.AV"/>
+    </OI>
+    <OI NAME="Occupancy" TYPE="system.base.Folder">
+      <OI NAME="AHUNextOcc" TYPE="server.point.TS"/>
+      <OI DESCR="AHU-1,2,3 Occupied" NAME="AHUOccupied" TYPE="server.point.BV">
+        <PI Name="NOTE2" Value="on=occupied"/>
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Schedules/BlueWingSched" Property="Value" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI DESCR="Cafeteria Unit Occupied" NAME="CafeteriaOcc" TYPE="server.point.BV">
+        <PI Name="NOTE2" Value="on=occupied"/>
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Schedules/Cafeteria" Property="Value" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI DESCR="Exhaust Fan Occupied" NAME="EFOccupied" TYPE="server.point.BV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Schedules/ExhaustFan" Property="Value" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="GreenWingOcc" TYPE="server.point.BV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Schedules/GreenWingSched" Property="Value" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI DESCR="Gym Unit Occupied" NAME="GymOcc" TYPE="server.point.BV">
+        <PI Name="NOTE2" Value="on=occupied"/>
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Schedules/Gym" Property="Value" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI DESCR="Kitichen Unit Occupied" NAME="KitchenOcc" TYPE="server.point.BV">
+        <PI Name="NOTE2" Value="on=occupied"/>
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Schedules/Kitchen" Property="Value" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI DESCR="Office AHU Occupied" NAME="OfficeAHUOcc" TYPE="server.point.BV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Schedules/OfficeAHU" Property="Value" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="OccBldg" TYPE="server.point.AV"/>
+      <OI DESCR="Building Occupied" NAME="Occupied" TYPE="server.point.BV"/>
+      <OI NAME="NextAHU04Occ" TYPE="server.point.TS"/>
+      <OI NAME="NextAHU05Occ" TYPE="server.point.TS"/>
+    </OI>
+    <OI NAME="SpaceError" TYPE="system.base.Folder">
+      <OI NAME="AreaAMaximumST" TYPE="server.point.AV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Programs/BuildingDemand/GetAreaATemps" Property="AreaAMaximumST" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="AreaAMinimumST" TYPE="server.point.AV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Programs/BuildingDemand/GetAreaATemps" Property="AreaAMinimumST" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="AreaBMaximumST" TYPE="server.point.AV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Programs/BuildingDemand/GetAreaBTemps" Property="AreaBMaximumST" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="AreaBMinimumST" TYPE="server.point.AV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Programs/BuildingDemand/GetAreaBTemps" Property="AreaBMinimumST" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="AreaCMaximumST" TYPE="server.point.AV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Programs/BuildingDemand/GetAreaCTemps" Property="AreaCMaximumST" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="AreaCMinimumST" TYPE="server.point.AV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Programs/BuildingDemand/GetAreaCTemps" Property="AreaCMinimumST" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="AreaDMaximumST" TYPE="server.point.AV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Programs/BuildingDemand/GetAreaDTemps" Property="AreaDMaximumST" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="AreaDMinimumST" TYPE="server.point.AV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Programs/BuildingDemand/GetAreaDTemps" Property="AreaDMinimumST" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="AreaKMaximumST" TYPE="server.point.AV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Programs/BuildingDemand/GetAreaKTemps" Property="AreaKMaximumST" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="AreaKMinimumST" TYPE="server.point.AV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Programs/BuildingDemand/GetAreaKTemps" Property="AreaKMinimumST" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="AreaLMaximumST" TYPE="server.point.AV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Programs/BuildingDemand/GetAreaLTemps" Property="AreaLMaximumST" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="AreaLMinimumST" TYPE="server.point.AV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Programs/BuildingDemand/GetAreaLTemps" Property="AreaLMinimumST" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="AreaMMaximumST" TYPE="server.point.AV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Programs/BuildingDemand/GetAreaMTemps" Property="AreaMMaximumST" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="AreaMMinimumST" TYPE="server.point.AV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Programs/BuildingDemand/GetAreaMTemps" Property="AreaMMinimumST" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="AreaNMaximumST" TYPE="server.point.AV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Programs/BuildingDemand/GetAreaNTemps" Property="AreaNMaximumST" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="AreaNMinimumST" TYPE="server.point.AV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Programs/BuildingDemand/GetAreaNTemps" Property="AreaNMinimumST" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="AreaEMaximumST" TYPE="server.point.AV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Programs/BuildingDemand/GetAreaETemps" Property="AreaEMaximumST" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="AreaFMaximumST" TYPE="server.point.AV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Programs/BuildingDemand/GetAreaFTemps" Property="AreaFMaximumST" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="AreaHMaximumST" TYPE="server.point.AV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Programs/BuildingDemand/GetAreaHTemps" Property="AreaHMaximumST" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="AreaJMaximumST" TYPE="server.point.AV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Programs/BuildingDemand/GetAreaJTemps" Property="AreaJMaximumST" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="AreaASpaceCStpts" TYPE="server.point.AV"/>
+      <OI NAME="AreaASpaceTemps" TYPE="server.point.AV"/>
+      <OI NAME="AreaBSpaceCStpts" TYPE="server.point.AV"/>
+      <OI NAME="AreaBSpaceTemps" TYPE="server.point.AV"/>
+      <OI NAME="AreaCSpaceCStpts" TYPE="server.point.AV"/>
+      <OI NAME="AreaCSpaceTemps" TYPE="server.point.AV"/>
+      <OI NAME="AreaDSpaceCStpts" TYPE="server.point.AV"/>
+      <OI NAME="AreaDSpaceTemps" TYPE="server.point.AV"/>
+      <OI NAME="AreaESpaceCStpts" TYPE="server.point.AV"/>
+      <OI NAME="AreaESpaceTemps" TYPE="server.point.AV"/>
+      <OI NAME="AreaFSpaceCStpts" TYPE="server.point.AV"/>
+      <OI NAME="AreaFSpaceTemps" TYPE="server.point.AV"/>
+      <OI NAME="AreaJSpaceCStpts" TYPE="server.point.AV"/>
+      <OI NAME="AreaJSpaceTemps" TYPE="server.point.AV"/>
+      <OI NAME="AreaKSpaceCStpts" TYPE="server.point.AV"/>
+      <OI NAME="AreaKSpaceTemps" TYPE="server.point.AV"/>
+      <OI NAME="AreaLSpaceCStpts" TYPE="server.point.AV"/>
+      <OI NAME="AreaLSpaceTemps" TYPE="server.point.AV"/>
+      <OI NAME="AreaMSpaceCStpts" TYPE="server.point.AV"/>
+      <OI NAME="AreaMSpaceTemps" TYPE="server.point.AV"/>
+      <OI NAME="AreaNSpaceCStpts" TYPE="server.point.AV"/>
+      <OI NAME="AreaNSpaceTemps" TYPE="server.point.AV"/>
+      <OI NAME="AH01MaximumST" TYPE="server.point.AV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Programs/BuildingDemand/GetAHU01Temps" Property="AH01MaximumST" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="AH01MinimumST" TYPE="server.point.AV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Programs/BuildingDemand/GetAHU01Temps" Property="AH01MinimumST" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="AH02MaximumST" TYPE="server.point.AV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Programs/BuildingDemand/GetAHU02Temps" Property="AH02MaximumST" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="AH02MinimumST" TYPE="server.point.AV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Programs/BuildingDemand/GetAHU02Temps" Property="AH02MinimumST" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="AH03MaximumST" TYPE="server.point.AV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Programs/BuildingDemand/GetAHU03Temps" Property="AH03MaximumST" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="AH03MinimumST" TYPE="server.point.AV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Programs/BuildingDemand/GetAHU03Temps" Property="AH03MinimumST" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="AreaEMinimumST" TYPE="server.point.AV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Programs/BuildingDemand/GetAreaETemps" Property="AreaEMinimumST" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="AreaFMinimumST" TYPE="server.point.AV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Programs/BuildingDemand/GetAreaFTemps" Property="AreaFMinimumST" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="AreaHMinimumST" TYPE="server.point.AV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Programs/BuildingDemand/GetAreaHTemps" Property="AreaHMinimumST" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="AreaJMinimumST" TYPE="server.point.AV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Programs/BuildingDemand/GetAreaJTemps" Property="AreaJMinimumST" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+    </OI>
+    <OI NAME="Other" TYPE="system.base.Folder">
+      <OI DESCR="Night Set Back Temp Setpoint" NAME="StptNightSetBkCl" TYPE="server.point.AV">
+        <PI Name="NOTE2" Value="degf"/>
+        <PI Name="Value" Unit="0x280003" Value="78"/>
+      </OI>
+      <OI DESCR="Average Total Secondary Tonnage" NAME="AVSTons" TYPE="server.point.AV">
+        <PI Name="NOTE2" Value="tons"/>
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Programs/Other/Variables" Property="AVSTons" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI DESCR="Lag Pump Time Delay" NAME="StptLagDelay" TYPE="server.point.AV">
+        <PI Name="NOTE2" Value="minutes"/>
+        <PI Name="Value" Unit="0x2E0006" Value="10"/>
+      </OI>
+      <OI DESCR="Lag Pump Delay Off Setpoint" NAME="LgEnaDof" TYPE="server.point.AV">
+        <PI Name="NOTE2" Value="minutes"/>
+        <PI Name="Value" Unit="0x2E0006" Value="10"/>
+      </OI>
+      <OI NAME="StptLagVFDHiSpd" TYPE="server.point.AV">
+        <PI Name="NOTE2" Value="%"/>
+        <PI Name="Value" Unit="0x200001" Value="100"/>
+      </OI>
+      <OI NAME="StptLagVFDLoSpd" TYPE="server.point.AV">
+        <PI Name="NOTE2" Value="%"/>
+        <PI Name="Value" Unit="0x200001" Value="80"/>
+      </OI>
+      <OI NAME="FzMdDly" TYPE="server.point.AV">
+        <PI Name="NOTE2" Value="minutes"/>
+        <PI Name="Value" Unit="0x2E0006" Value="30"/>
+      </OI>
+      <OI NAME="FzMdSptBi" TYPE="server.point.AV">
+        <PI Name="NOTE2" Value="degf"/>
+        <PI Name="Value" Unit="0x280003" Value="38"/>
+      </OI>
+      <OI NAME="FzMdSptDb" TYPE="server.point.AV">
+        <PI Name="Value" Value="2"/>
+      </OI>
+      <OI NAME="StptFreezeMode" TYPE="server.point.AV">
+        <PI Name="Value" Value="34"/>
+      </OI>
+      <OI NAME="FanRunning" TYPE="server.point.BV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Programs/Other/SetFanRunning" Property="FanRunning" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI DESCR="Secondary Flow in % to Primary" NAME="SecFlowPercent" TYPE="server.point.AV">
+        <PI Name="NOTE2" Value="%"/>
+        <PI Name="Value" Unit="0x200001">
+          <Reference DeltaFilter="0" Object="../../../Programs/Other/Variables" Property="SecFlowPercent" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI DESCR="Secondary Tonnage" NAME="TonnageSecLoop" TYPE="server.point.AV">
+        <PI Name="NOTE2" Value="tons"/>
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Programs/Other/Variables" Property="TonnageSecLoop" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="CDDrivetoMax" TYPE="server.point.AV">
+        <PI Name="NOTE2" Value="tab"/>
+      </OI>
+      <OI NAME="CDDrivetoMin" TYPE="server.point.AV">
+        <PI Name="NOTE2" Value="tab"/>
+      </OI>
+      <OI DESCR="Duct Inlet Size in inches" NAME="CDStptDuctInlet" TYPE="server.point.AV">
+        <PI Name="NOTE2" Value="inches"/>
+      </OI>
+      <OI DESCR="Global Space Setpoint Enable" NAME="GlobalStptEnble" TYPE="server.point.BV"/>
+      <OI DESCR="Global Space Temp Setpoint" NAME="GlobalStptSpace" TYPE="server.point.AV">
+        <PI Name="NOTE2" Value="deg"/>
+      </OI>
+      <OI NAME="HDDrivetoMax" TYPE="server.point.AV">
+        <PI Name="NOTE2" Value="tab"/>
+      </OI>
+      <OI NAME="HDDrivetoMin" TYPE="server.point.AV">
+        <PI Name="NOTE2" Value="tab"/>
+      </OI>
+      <OI DESCR="Number of Times Reloaded" NAME="HS_Reload_Count" TYPE="server.point.AV">
+        <PI Name="NOTE2" Value="times"/>
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Programs/Other/MonitorHS" Property="HS_Reload_Count" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI NAME="J125Stamp" TYPE="server.point.TS"/>
+      <OI DESCR="Number of Times Reloaded" NAME="MS_Reload_Count" TYPE="server.point.AV">
+        <PI Name="NOTE2" Value="times"/>
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Programs/Other/MonitorMS" Property="MS_Reload_Count" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI DESCR="Calculated Primary Flow Rate" NAME="Pri_Flow_Rate" TYPE="server.point.AV">
+        <PI Name="NOTE2" Value="gpm"/>
+        <PI Name="Value" Unit="0xF0008">
+          <Reference DeltaFilter="0" Object="../../../Programs/Other/Variables" Property="Pri_Flow_Rate" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI DESCR="Toggled On to Reset Refrig Alm" NAME="ResetRefrigAlm" TYPE="server.point.AV">
+        <PI Name="Value">
+          <Reference DeltaFilter="0" Object="../../../Programs/Exhaust/CtrlEaFanF3Cmd" Property="ResetRefrigAlm" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI DESCR="secondary flow" NAME="Sec_Flow_Rate" TYPE="server.point.AV">
+        <PI Name="NOTE2" Value="gpm"/>
+        <PI Name="Value" Unit="0xF0008">
+          <Reference DeltaFilter="0" Object="../../../Programs/Other/Variables" Property="Sec_Flow_Rate" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI DESCR="Night Set Back Temp Setpoint" NAME="StptNightSetBkHt" TYPE="server.point.AV">
+        <PI Name="NOTE2" Value="degf"/>
+        <PI Name="Value" Unit="0x280003" Value="65"/>
+      </OI>
+      <OI DESCR="Secondary Flow Percent" NAME="Fl" TYPE="server.point.AV">
+        <PI Name="NOTE2" Value="%"/>
+        <PI Name="Value" Unit="0x200001">
+          <Reference DeltaFilter="0" Object="../../../Programs/Chiller/ChillerControl/SetChStgReq" Property="StptSecFlowPer" Retransmit="0" TransferRate="10"/>
+        </PI>
+      </OI>
+      <OI DESCR="Maximum VFD Speed" NAME="PSpdMax" TYPE="server.point.AV">
+        <PI Name="NOTE2" Value="%"/>
+        <PI Name="Value" Unit="0x200001" Value="100"/>
+      </OI>
+      <OI DESCR="VFD Min. Speed" NAME="PSpdMin" TYPE="server.point.AV">
+        <PI Name="NOTE2" Value="%"/>
+        <PI Name="Value" Unit="0x200001" Value="20"/>
+      </OI>
+      <OI NAME="winfCntrlName" TYPE="server.point.SV"/>
+    </OI>
+    <OI NAME="BuildingDemand" TYPE="system.base.Folder">
+      <OI NAME="AreaHSpaceCStpts" TYPE="server.point.AV"/>
+      <OI NAME="AreaHSpaceTemps" TYPE="server.point.AV"/>
+      <OI NAME="BoilerCall" TYPE="system.base.Folder">
+        <OI NAME="AH01BoilerCall" TYPE="server.point.BV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/BuildingDemand/SetHeatCall/SetAHU01BlrCall" Property="AH01BoilerCall" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="AH02BoilerCall" TYPE="server.point.BV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/BuildingDemand/SetHeatCall/SetAHU02BlrCall" Property="AH02BoilerCall" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="AH03BoilerCall" TYPE="server.point.BV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/BuildingDemand/SetHeatCall/SetAHU03BlrCall" Property="AH03BoilerCall" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="AH04BoilerCall" TYPE="server.point.BV"/>
+        <OI NAME="AH05BoilerCall" TYPE="server.point.BV"/>
+        <OI NAME="AH06BoilerCall" TYPE="server.point.BV"/>
+      </OI>
+      <OI NAME="ChillerCall" TYPE="system.base.Folder">
+        <OI NAME="AH01ChillerCall" TYPE="server.point.BV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Schedules/TempChillerSchedule" Property="Value" Retransmit="1" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="AH02ChillerCall" TYPE="server.point.BV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/BuildingDemand/SetCoolCall/SetAH02ChlrCall" Property="AH02ChillerCall" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="AH03ChillerCall" TYPE="server.point.BV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/BuildingDemand/SetCoolCall/SetAH03ChlrCall" Property="AH03ChillerCall" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="AH04ChillerCall" TYPE="server.point.BV"/>
+        <OI NAME="AH05ChillerCall" TYPE="server.point.BV"/>
+        <OI NAME="AH06ChillerCall" TYPE="server.point.BV"/>
+      </OI>
+      <OI NAME="HeatingDemand" TYPE="system.base.Folder">
+        <OI NAME="AH01HtgError" TYPE="server.point.AV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/BuildingDemand/GetAHU01Temps" Property="AH01HtgError" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="StptHtgError" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="degf"/>
+          <PI Name="Value" Unit="0x280003" Value="0.5"/>
+        </OI>
+        <OI NAME="StptHtgErrorDB" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="degf"/>
+          <PI Name="Value" Unit="0x280003" Value="1"/>
+        </OI>
+        <OI NAME="AreaAHtgError" TYPE="server.point.AV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/BuildingDemand/GetAreaATemps" Property="AreaAHtgError" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="AreaBHtgError" TYPE="server.point.AV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/BuildingDemand/GetAreaBTemps" Property="AreaBHtgError" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="AreaCHtgError" TYPE="server.point.AV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/BuildingDemand/GetAreaCTemps" Property="AreaCHtgError" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="AreaDHtgError" TYPE="server.point.AV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/BuildingDemand/GetAreaDTemps" Property="AreaDHtgError" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="AH02HtgError" TYPE="server.point.AV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/BuildingDemand/GetAHU02Temps" Property="AH02HtgError" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="AreaKHtgError" TYPE="server.point.AV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/BuildingDemand/GetAreaKTemps" Property="AreaKHtgError" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="AreaLHtgError" TYPE="server.point.AV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/BuildingDemand/GetAreaLTemps" Property="AreaLHtgError" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="AreaMHtgError" TYPE="server.point.AV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/BuildingDemand/GetAreaMTemps" Property="AreaMHtgError" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="AreaNHtgError" TYPE="server.point.AV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/BuildingDemand/GetAreaNTemps" Property="AreaNHtgError" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="AH03HtgError" TYPE="server.point.AV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/BuildingDemand/GetAHU03Temps" Property="AH03HtgError" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="AreaEHtgError" TYPE="server.point.AV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/BuildingDemand/GetAreaETemps" Property="AreaEHtgError" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="AreaFHtgError" TYPE="server.point.AV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/BuildingDemand/GetAreaFTemps" Property="AreaFHtgError" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="AreaHHtgError" TYPE="server.point.AV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/BuildingDemand/GetAreaHTemps" Property="AreaHHtgError" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="AreaJHtgError" TYPE="server.point.AV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/BuildingDemand/GetAreaJTemps" Property="AreaJHtgError" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="AreaASpaceHStpts" TYPE="server.point.AV"/>
+        <OI NAME="AreaBSpaceHStpts" TYPE="server.point.AV"/>
+        <OI NAME="AreaCSpaceHStpts" TYPE="server.point.AV"/>
+        <OI NAME="AreaDSpaceHStpts" TYPE="server.point.AV"/>
+        <OI NAME="AreaESpaceHStpts" TYPE="server.point.AV"/>
+        <OI NAME="AreaFSpaceHStpts" TYPE="server.point.AV"/>
+        <OI NAME="AreaHSpaceHStpts" TYPE="server.point.AV"/>
+        <OI NAME="AreaJSpaceHStpts" TYPE="server.point.AV"/>
+        <OI NAME="AreaKSpaceHStpts" TYPE="server.point.AV"/>
+        <OI NAME="AreaLSpaceHStpts" TYPE="server.point.AV"/>
+        <OI NAME="AreaMSpaceHStpts" TYPE="server.point.AV"/>
+        <OI NAME="AreaNSpaceHStpts" TYPE="server.point.AV"/>
+        <OI DESCR="Number of Heating AHUs Running" NAME="TlHtgAhuRunning" TYPE="server.point.AV"/>
+        <OI DESCR="total building heating error" NAME="HtgError" TYPE="server.point.AV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/BuildingDemand/GetHtgError" Property="HtgError" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+      </OI>
+      <OI NAME="CoolingDemand" TYPE="system.base.Folder">
+        <OI NAME="AH01ClgError" TYPE="server.point.AV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/BuildingDemand/GetAHU01Temps" Property="AH01ClgError" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="StptClgError" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="degf"/>
+          <PI Name="Value" Unit="0x280003" Value="0.5"/>
+        </OI>
+        <OI NAME="StptClgErrorDB" TYPE="server.point.AV">
+          <PI Name="NOTE2" Value="degf"/>
+          <PI Name="Value" Unit="0x280003" Value="2"/>
+        </OI>
+        <OI NAME="AreaAClgError" TYPE="server.point.AV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/BuildingDemand/GetAreaATemps" Property="AreaAClgError" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="AreaBClgError" TYPE="server.point.AV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/BuildingDemand/GetAreaBTemps" Property="AreaBClgError" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="AreaCClgError" TYPE="server.point.AV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/BuildingDemand/GetAreaCTemps" Property="AreaCClgError" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="AreaDClgError" TYPE="server.point.AV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/BuildingDemand/GetAreaDTemps" Property="AreaDClgError" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="AH02ClgError" TYPE="server.point.AV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/BuildingDemand/GetAHU02Temps" Property="AH02ClgError" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="AreaKClgError" TYPE="server.point.AV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/BuildingDemand/GetAreaKTemps" Property="AreaKClgError" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="AreaLClgError" TYPE="server.point.AV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/BuildingDemand/GetAreaLTemps" Property="AreaLClgError" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="AreaMClgError" TYPE="server.point.AV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/BuildingDemand/GetAreaMTemps" Property="AreaMClgError" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="AreaNClgError" TYPE="server.point.AV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/BuildingDemand/GetAreaNTemps" Property="AreaNClgError" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="AH03ClgError" TYPE="server.point.AV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/BuildingDemand/GetAHU03Temps" Property="AH03ClgError" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="AreaEClgError" TYPE="server.point.AV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/BuildingDemand/GetAreaETemps" Property="AreaEClgError" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="AreaFClgError" TYPE="server.point.AV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/BuildingDemand/GetAreaFTemps" Property="AreaFClgError" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="AreaHClgError" TYPE="server.point.AV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/BuildingDemand/GetAreaHTemps" Property="AreaHClgError" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI NAME="AreaJClgError" TYPE="server.point.AV">
+          <PI Name="Value">
+            <Reference DeltaFilter="0" Object="../../../../Programs/BuildingDemand/GetAreaJTemps" Property="AreaJClgError" Retransmit="0" TransferRate="10"/>
+          </PI>
+        </OI>
+        <OI DESCR="Number of Cooling AHUs Running" NAME="TlClgAhuRunning" TYPE="server.point.AV"/>
+        <OI NAME="BldgClgErr" TYPE="server.point.AV">
+          <PI Name="Value" Unit="0x280003"/>
+        </OI>
+      </OI>
+    </OI>
+    <OI NAME="CombustionAir" TYPE="system.base.Folder"/>
+    <OI NAME="ASPConnectionToken" TYPE="signal.Signal">
+      <PI Name="Cycles" Value="300"/>
+    </OI>
+  </OI>
+</ExportedObjects>
+
+</ObjectSet>
