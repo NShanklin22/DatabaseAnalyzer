@@ -126,6 +126,11 @@ class MainWindow(QWidget):
         self.Label08.move(0,LabelSeparation * 8)
         self.Label08.resize(sizeX, int(FontSize * 3))
         self.Label08.setFont(QFont('Helveitca', 28))
+        # Label 09
+        self.Label09 = QLabel("", my_frame01)
+        self.Label09.move(0,LabelSeparation * 9)
+        self.Label09.resize(sizeX, int(FontSize * 3))
+        self.Label09.setFont(QFont('Helveitca', 28))
 
         # Add the progress bar
         self.progress_bar = QProgressBar(self)
@@ -169,34 +174,40 @@ class MainWindow(QWidget):
         else:
             self.Label03.setText("Process starting...")
             self.progress_bar.setValue(10)
-            QtTest.QTest.qWait(random.randint(5, 15)*100)
+            QtTest.QTest.qWait(random.randint(5, 50)*100)
             self.loadDatabaseNames(databaseFile)
 
     def loadDatabaseNames(self, databaseFile):
+        randomDur = random.randint(20,50)
+
         self.Label04.setText("Loading object names from database...")
         databaseNames = loadDatabaseNames(databaseFile)
         print(databaseNames)
-        self.progress_bar.setValue(25)
-        QtTest.QTest.qWait(random.randint(5, 15) * 100)
+        self.progress_bar.setValue(randomDur/2)
+        QtTest.QTest.qWait(randomDur * 10)
         self.loadApprovedNames(databaseNames)
 
     def loadApprovedNames(self, databaseNames):
+        current_progress = self.progress_bar.value()
+        randomDur = current_progress + random.randint(15,30)
+        print(randomDur)
         self.Label05.setText("Importing list of approved names...")
         # Load the approved names
         approvedNames = loadApprovedNames()
-        self.progress_bar.setValue(40)
-        QtTest.QTest.qWait(random.randint(5, 15) * 100)
+        self.progress_bar.setValue(randomDur)
+        QtTest.QTest.qWait(randomDur * 10)
         self.getDatabaseGrade(databaseNames,approvedNames)
 
     def getDatabaseGrade(self,databaseNames, approvedNames):
         self.Label06.setText("Cross-referencing database names with approved names...")
         self.progress_bar.setValue(75)
         QtTest.QTest.qWait(random.randint(5, 15) * 100)
-        self.Grade = analyzeDatabase(databaseNames, approvedNames)
+        self.Grade,totalIncorrect,totalCorrect = analyzeDatabase(databaseNames, approvedNames)
         self.progressAnimation()
         self.Label07.setText("Analysis Complete - Sending data to database")
         QtTest.QTest.qWait(500)
-        self.Label08.setText("Total SEBA+ Name Score: {}%".format(self.Grade))
+        self.Label08.setText("Total Correct Names: {} Total Incorrect Names: {}".format(totalCorrect,totalIncorrect))
+        self.Label09.setText("Total SEBA+ Name Score: {}%".format(self.Grade))
         self.fname = ""
 
     # Function to display the progress animation once the database has been analyzed
@@ -217,6 +228,7 @@ class MainWindow(QWidget):
         self.Label05.setText("")
         self.Label06.setText("")
         self.Label07.setText("")
+        self.Label08.setText("")
 
     def open_new_window(self):
         # create the new window
@@ -298,7 +310,7 @@ class ChartWindow(QWidget):
 
         ax = self.bars[0].axes
         ax.set_xticklabels(new_labels, rotation=25)
-        ax.set_ylim(0, new_y.max() + 55)
+        ax.set_ylim(0, new_y.max() + new_y.max()/10)
         self.canvas.draw()
 
     def GoBack(self):

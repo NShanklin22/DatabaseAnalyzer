@@ -15,6 +15,11 @@ def analyzeDatabase(databaseNames, approvedNames):
             non_digit_chars = re.findall(r'\D', name)
             name = "".join(non_digit_chars)
 
+        print(name[0:2])
+        if name[0:2] == "Zn":
+            name = name[0:2] + name[3:]
+            print(name)
+
         if(name in approvedNames.values):
             correctNames.append(name)
         else:
@@ -33,4 +38,7 @@ def analyzeDatabase(databaseNames, approvedNames):
     Grade = len(correctNames) / (len(correctNames) + len(incorrectNames)) * 100
     Grade = round(Grade, 2)
 
-    return Grade
+    totalIncorrect = len(incorrectNames)
+    totalCorrect = len(correctNames)
+
+    return Grade,totalIncorrect,totalCorrect
