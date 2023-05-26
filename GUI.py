@@ -1,7 +1,4 @@
-
 # importing libraries
-import random
-
 from PyQt5.QtWidgets import *
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QMenuBar
@@ -19,12 +16,14 @@ import sys
 import pandas as pd
 import matplotlib.pyplot as plt
 import os
-
+import random
 import time
 
+# Setup so user can save exports to "exports" folder and "load database" will open there.
 current_file_path = os.getcwd()
 path_to_exports = os.path.join(current_file_path, "exports")
 
+# Setup screen variables for dynamic display
 screen = get_monitors()[0]
 
 # Define the x and y size of the screen
@@ -35,10 +34,12 @@ sizeY = int(screen.height / 1.5)
 locX = int(sizeX / 2)
 locY = int(sizeY / 2)
 
+# Main window class for PyQT, program opens this window on start
 class MainWindow(QWidget):
     def __init__(self):
         super().__init__()
 
+        # Variables to be used later in the application
         self.fname = ""
         self.Grade = 0
 
@@ -66,68 +67,71 @@ class MainWindow(QWidget):
         ## Setting up the menubar ####
         ##############################
 
+        ### Under Construtions ####
 
         ##############################
         ## Setting up the layout #####
         ##############################
 
-        # Create a vertical layout
+        # Create a vertical and horizantal layouts
         mainLayout = QVBoxLayout()
-        layout01 = QVBoxLayout()
-        layout02 = QHBoxLayout()
+        updateScreenLayout = QVBoxLayout()
+        buttonLayout = QHBoxLayout()
 
         # Add the menu to the main layout
 
-        # Frame for app updates)
-        my_frame01 = QFrame()
-        my_frame01.setFrameShape(QFrame.StyledPanel)
+        # Frame for app updates, displays text labels to the user
+        updateFrame = QFrame()
+        updateFrame.setFrameShape(QFrame.StyledPanel)
 
         # FontSize stores the default font size for the window
         FontSize = 18
+        # Label separation for the update screen
         LabelSeparation = int(FontSize * 2.0)
 
-        # Label 01 uses QLabel and applies it to frame 01, the text can then be updated later
-        self.Label01 = QLabel("Click Load Database and select an AS-P xml export", my_frame01)
+        # The folowing labels are used to update the user in the main screens and will be modified as the program runs.
+        # Label 01
+        self.Label01 = QLabel("Click Load Database and select an AS-P xml export", updateFrame)
         self.Label01.move(0,0)
         self.Label01.resize(sizeX,int(FontSize *2.0))
         self.Label01.setFont(QFont('Helveitca', 18))
         # Label 02
-        self.Label02 = QLabel("", my_frame01)
+        self.Label02 = QLabel("", updateFrame)
         self.Label02.move(0,LabelSeparation)
         self.Label02.setFont(QFont('Helveitca', 18))
         self.Label02.resize(sizeX,int(FontSize *2.0))
         # Label 03
-        self.Label03 = QLabel("", my_frame01)
+        self.Label03 = QLabel("", updateFrame)
         self.Label03.move(0,LabelSeparation * 2)
         self.Label03.resize(sizeX, int(FontSize * 2.0))
         self.Label03.setFont(QFont('Helveitca', 18))
         # Label 04
-        self.Label04 = QLabel("", my_frame01)
+        self.Label04 = QLabel("", updateFrame)
         self.Label04.move(0,LabelSeparation * 3)
         self.Label04.resize(sizeX, int(FontSize * 2.0))
         self.Label04.setFont(QFont('Helveitca', 18))
         # Label 05
-        self.Label05 = QLabel("", my_frame01)
+        self.Label05 = QLabel("", updateFrame)
         self.Label05.move(0,LabelSeparation * 4)
         self.Label05.resize(sizeX, int(FontSize * 2.0))
         self.Label05.setFont(QFont('Helveitca', 18))
         # Label 06
-        self.Label06 = QLabel("", my_frame01)
+        self.Label06 = QLabel("", updateFrame)
         self.Label06.move(0,LabelSeparation * 5)
         self.Label06.resize(sizeX, int(FontSize * 2.0))
         self.Label06.setFont(QFont('Helveitca', 18))
         # Label 07
-        self.Label07 = QLabel("", my_frame01)
+        self.Label07 = QLabel("", updateFrame)
         self.Label07.move(0,LabelSeparation * 6)
         self.Label07.resize(sizeX, int(FontSize * 2.0))
         self.Label07.setFont(QFont('Helveitca', 18))
         # Label 08
-        self.Label08 = QLabel("", my_frame01)
+        self.Label08 = QLabel("", updateFrame)
         self.Label08.move(0,LabelSeparation * 8)
         self.Label08.resize(sizeX, int(FontSize * 3))
         self.Label08.setFont(QFont('Helveitca', 28))
         # Label 09
-        self.Label09 = QLabel("", my_frame01)
+        self.Label09 = QLabel("", updateFrame)
         self.Label09.move(0,LabelSeparation * 9)
         self.Label09.resize(sizeX, int(FontSize * 3))
         self.Label09.setFont(QFont('Helveitca', 28))
@@ -136,21 +140,21 @@ class MainWindow(QWidget):
         self.progress_bar = QProgressBar(self)
 
         # Add the labels to the first layout
-        layout01.addWidget(my_frame01)
-        layout01.addWidget(self.progress_bar)
+        updateScreenLayout.addWidget(updateFrame)
+        updateScreenLayout.addWidget(self.progress_bar)
 
         # Add the two buttons to the second layout
         load_database_button = QPushButton("Load Database", clicked = self.getfile)
         results_button = QPushButton("View Results", clicked = self.GotoChartWindow)
         analyze_database_button = QPushButton("Analyze Database", clicked = self.checkFileName)
 
-        layout02.addWidget(load_database_button)
-        layout02.addWidget(results_button)
-        layout02.addWidget(analyze_database_button)
+        buttonLayout.addWidget(load_database_button)
+        buttonLayout.addWidget(results_button)
+        buttonLayout.addWidget(analyze_database_button)
 
-        # Add layout01 and layout02 to mainLayout
-        mainLayout.addLayout(layout01)
-        mainLayout.addLayout(layout02)
+        # Add updateScreenLayout and buttonLayout to mainLayout
+        mainLayout.addLayout(updateScreenLayout)
+        mainLayout.addLayout(buttonLayout)
 
         self.setLayout(mainLayout)
 
@@ -167,6 +171,7 @@ class MainWindow(QWidget):
         self.Label03.setText("")
         self.fname = fname
 
+    # Checks that the file is valid, if so calls next function
     def checkFileName(self):
         databaseFile = self.fname
         if(databaseFile == ""):
@@ -177,16 +182,16 @@ class MainWindow(QWidget):
             QtTest.QTest.qWait(random.randint(5, 50)*100)
             self.loadDatabaseNames(databaseFile)
 
+    # Loads the names by calling a separate function which parses the database xml
     def loadDatabaseNames(self, databaseFile):
         randomDur = random.randint(20,50)
-
         self.Label04.setText("Loading object names from database...")
         databaseNames = loadDatabaseNames(databaseFile)
-        print(databaseNames)
         self.progress_bar.setValue(randomDur/2)
         QtTest.QTest.qWait(randomDur * 10)
         self.loadApprovedNames(databaseNames)
 
+    # Loads the approved names csv file
     def loadApprovedNames(self, databaseNames):
         current_progress = self.progress_bar.value()
         randomDur = current_progress + random.randint(15,30)
@@ -198,6 +203,7 @@ class MainWindow(QWidget):
         QtTest.QTest.qWait(randomDur * 10)
         self.getDatabaseGrade(databaseNames,approvedNames)
 
+    # Use the database names and approved names to determine a final score
     def getDatabaseGrade(self,databaseNames, approvedNames):
         self.Label06.setText("Cross-referencing database names with approved names...")
         self.progress_bar.setValue(75)
@@ -259,8 +265,8 @@ class ChartWindow(QWidget):
 
         # Define the layout objects for the chart window
         mainLayout = QVBoxLayout()
-        layout01 = QVBoxLayout()
-        layout02 = QHBoxLayout()
+        updateScreenLayout = QVBoxLayout()
+        buttonLayout = QHBoxLayout()
 
         # Define the matplotlib chart
         self.canvas = FigureCanvas(Figure(figsize=(2, 1)))
@@ -276,11 +282,11 @@ class ChartWindow(QWidget):
         self.refresh.clicked.connect(self.update_chart)
 
         # Add the widget to the defined layout
-        layout01.addWidget(self.canvas)
-        layout02.addWidget(self.button)
-        layout02.addWidget(self.refresh)
-        mainLayout.addLayout(layout01)
-        mainLayout.addLayout(layout02)
+        updateScreenLayout.addWidget(self.canvas)
+        buttonLayout.addWidget(self.button)
+        buttonLayout.addWidget(self.refresh)
+        mainLayout.addLayout(updateScreenLayout)
+        mainLayout.addLayout(buttonLayout)
         self.setLayout(mainLayout)
 
     def createBarChart(self,fig):
@@ -316,6 +322,7 @@ class ChartWindow(QWidget):
     def GoBack(self):
         widget.setCurrentIndex(0)
 
+# General application setup
 app = QApplication([])
 widget = QtWidgets.QStackedWidget()
 mainWindow = MainWindow()
